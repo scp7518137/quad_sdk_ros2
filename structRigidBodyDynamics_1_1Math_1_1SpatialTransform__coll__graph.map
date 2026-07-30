@@ -1,0 +1,11 @@
+<map id="RigidBodyDynamics::Math::SpatialTransform" name="RigidBodyDynamics::Math::SpatialTransform">
+<area shape="rect" id="Node000001" title="Compact representation of spatial transformations." alt="" coords="40,169,196,210"/>
+<area shape="rect" id="Node000002" href="$classMatrix3__t.html" title=" " alt="" coords="32,80,106,106"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="84,118,110,167,105,170,80,121"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="5,5,114,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="66,46,70,80,65,80,60,47"/>
+<area shape="rect" id="Node000004" href="$classVector3__t.html" title=" " alt="" coords="146,80,224,106"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="170,120,134,170,130,167,165,117"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="137,5,248,31"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="193,47,189,80,183,80,187,46"/>
+</map>

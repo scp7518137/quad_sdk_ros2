@@ -1,0 +1,11 @@
+<map id="RigidBodyDynamics::Body" name="RigidBodyDynamics::Body">
+<area shape="rect" id="Node000001" title="Describes all properties of a single body." alt="" coords="42,169,213,195"/>
+<area shape="rect" id="Node000002" href="$classVector3__t.html" title=" " alt="" coords="24,80,101,106"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="63,121,69,144,81,156,96,166,93,171,78,161,65,146,58,122"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="5,5,117,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="64,46,65,80,59,80,59,46"/>
+<area shape="rect" id="Node000004" href="$classMatrix3__t.html" title=" " alt="" coords="157,80,232,106"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="184,121,167,147,144,170,140,167,163,143,180,118"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="140,5,248,31"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="197,46,197,80,192,80,192,46"/>
+</map>

@@ -1,0 +1,15 @@
+<map id="RigidBodyDynamics::FixedBody" name="RigidBodyDynamics::FixedBody">
+<area shape="rect" id="Node000001" title="Keeps the information of a body and how it is attached to another body." alt="" coords="77,288,219,328"/>
+<area shape="rect" id="Node000002" href="$classVector3__t.html" title=" " alt="" coords="196,80,273,106"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="250,119,263,151,273,189,273,228,269,247,259,265,242,283,221,295,218,290,239,279,255,262,264,246,268,228,267,189,258,152,246,121"/>
+<area shape="rect" id="Node000006" href="$structRigidBodyDynamics_1_1Math_1_1SpatialTransform.html" title="Compact representation of spatial transformations." alt="" coords="73,169,228,210"/>
+<area shape="poly" id="edge7_Node000006_Node000002" title=" " alt="" coords="216,119,170,170,166,167,212,116"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="179,5,290,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="237,46,237,80,232,80,232,46"/>
+<area shape="rect" id="Node000004" href="$classMatrix3__t.html" title=" " alt="" coords="55,80,129,106"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="61,117,34,140,14,170,8,190,14,209,31,233,53,254,102,285,99,289,49,258,27,236,9,211,3,190,9,168,30,137,57,113"/>
+<area shape="poly" id="edge6_Node000006_Node000004" title=" " alt="" coords="110,118,141,167,136,170,105,120"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="38,5,146,31"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="95,46,95,80,89,80,89,46"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="152,225,152,234,151,288,146,287,147,234,147,225"/>
+</map>

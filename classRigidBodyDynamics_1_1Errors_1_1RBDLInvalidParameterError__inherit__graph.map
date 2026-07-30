@@ -1,0 +1,7 @@
+<map id="RigidBodyDynamics::Errors::RBDLInvalidParameterError" name="RigidBodyDynamics::Errors::RBDLInvalidParameterError">
+<area shape="rect" id="Node000001" title="Thrown if parameter of function was faulty." alt="" coords="5,168,200,223"/>
+<area shape="rect" id="Node000002" href="$classRigidBodyDynamics_1_1Errors_1_1RBDLError.html" title="Base class for all RBDL exceptions." alt="" coords="31,79,174,120"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="105,135,105,167,100,167,100,135"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="52,5,153,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="105,46,105,79,100,79,100,46"/>
+</map>

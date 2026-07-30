@@ -1,0 +1,25 @@
+<map id="src/external/mblink/include/mavlink/common/version.h" name="src/external/mblink/include/mavlink/common/version.h">
+<area shape="rect" id="Node000001" title="MAVLink comm protocol built from common.xml." alt="" coords="411,5,581,61"/>
+<area shape="rect" id="Node000002" href="$common_2mavlink_8h.html" title="MAVLink comm protocol built from common.xml." alt="" coords="411,109,581,165"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="499,77,499,108,493,108,493,77"/>
+<area shape="rect" id="Node000003" href="$mblink__protocol_8hpp_source.html" title=" " alt="" coords="421,213,571,268"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="499,180,499,212,493,212,493,180"/>
+<area shape="rect" id="Node000004" href="$mblink_8hpp_source.html" title=" " alt="" coords="409,316,583,357"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="499,284,499,316,493,316,493,284"/>
+<area shape="rect" id="Node000005" href="$spirit__interface_8h_source.html" title=" " alt="" coords="404,405,588,461"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="499,372,499,404,493,404,493,372"/>
+<area shape="rect" id="Node000006" href="$leg__controller_8h_source.html" title=" " alt="" coords="259,509,416,564"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="442,472,381,510,379,506,439,467"/>
+<area shape="rect" id="Node000008" href="$robot__driver_8h_source.html" title=" " alt="" coords="250,716,425,757"/>
+<area shape="poly" id="edge13_Node000005_Node000008" title=" " alt="" coords="545,469,590,511,630,562,643,589,649,617,646,644,633,670,619,681,600,692,548,709,487,721,426,729,425,724,486,716,547,703,598,687,616,677,629,666,641,642,644,617,638,591,625,565,586,515,542,473"/>
+<area shape="rect" id="Node000007" href="$grf__pid__controller_8h_source.html" title=" " alt="" coords="5,612,163,668"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="256,573,153,614,151,609,254,568"/>
+<area shape="poly" id="edge12_Node000006_Node000008" title=" " alt="" coords="264,575,243,593,228,614,219,640,221,653,228,667,251,694,282,713,280,718,248,698,223,669,216,654,214,640,223,611,239,589,260,571"/>
+<area shape="rect" id="Node000009" href="$inverse__dynamics__controller_8h_source.html" title=" " alt="" coords="238,612,437,668"/>
+<area shape="poly" id="edge8_Node000006_Node000009" title=" " alt="" coords="340,580,340,612,335,612,335,580"/>
+<area shape="rect" id="Node000010" href="$joint__controller_8h_source.html" title=" " alt="" coords="461,612,619,668"/>
+<area shape="poly" id="edge10_Node000006_Node000010" title=" " alt="" coords="407,569,487,609,484,614,404,574"/>
+<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="172,671,285,713,283,718,170,676"/>
+<area shape="poly" id="edge9_Node000009_Node000008" title=" " alt="" coords="340,684,340,716,335,716,335,684"/>
+<area shape="poly" id="edge11_Node000010_Node000008" title=" " alt="" coords="469,677,381,718,379,713,467,672"/>
+</map>

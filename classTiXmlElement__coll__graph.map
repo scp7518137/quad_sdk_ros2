@@ -1,0 +1,22 @@
+<map id="TiXmlElement" name="TiXmlElement">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,577,108,603"/>
+<area shape="rect" id="Node000002" href="$classTiXmlNode.html" title=" " alt="" coords="24,207,110,233"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="56,248,44,281,38,319,38,503,44,543,54,576,49,578,38,544,33,503,33,318,39,280,51,246"/>
+<area shape="poly" id="edge5_Node000002_Node000002" title=" " alt="" coords="127,208,134,213,137,221,129,231,111,234,110,229,126,226,132,220,130,216,124,213"/>
+<area shape="rect" id="Node000008" href="$classTiXmlDocument.html" title=" " alt="" coords="73,307,187,333"/>
+<area shape="poly" id="edge10_Node000008_Node000002" title=" " alt="" coords="85,245,124,305,120,308,81,247"/>
+<area shape="rect" id="Node000003" href="$classTiXmlBase.html" title=" " alt="" coords="126,94,211,120"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="150,133,80,209,76,205,146,129"/>
+<area shape="rect" id="Node000007" href="$classTiXmlAttribute.html" title=" " alt="" coords="83,398,187,424"/>
+<area shape="poly" id="edge8_Node000007_Node000003" title=" " alt="" coords="183,133,202,180,217,242,221,275,220,309,214,342,200,373,186,389,170,400,167,395,183,385,196,370,208,341,215,309,216,276,212,243,197,182,178,135"/>
+<area shape="rect" id="Node000004" href="$structTiXmlCursor.html" title=" " alt="" coords="227,5,320,31"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="235,41,210,57,192,76,178,95,174,92,188,73,207,53,232,36"/>
+<area shape="poly" id="edge11_Node000008_Node000004" title=" " alt="" coords="273,47,265,90,251,145,230,203,201,259,176,288,150,309,147,305,173,284,197,256,226,201,246,143,260,89,268,46"/>
+<area shape="rect" id="Node000005" href="$structTiXmlBase_1_1Entity.html" title=" " alt="" coords="80,5,204,31"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="143,46,146,69,160,93,156,95,141,71,137,47"/>
+<area shape="rect" id="Node000006" href="$classTiXmlAttributeSet.html" title=" " alt="" coords="73,489,197,514"/>
+<area shape="poly" id="edge6_Node000001_Node000006" title=" " alt="" coords="116,528,69,579,65,575,112,524"/>
+<area shape="poly" id="edge7_Node000006_Node000007" title=" " alt="" coords="138,439,138,488,132,488,132,439"/>
+<area shape="poly" id="edge12_Node000007_Node000007" title=" " alt="" coords="205,402,214,411,206,419,188,422,187,417,203,414,209,411,201,406"/>
+<area shape="poly" id="edge9_Node000007_Node000008" title=" " alt="" coords="134,348,137,397,132,398,129,348"/>
+</map>

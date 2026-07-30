@@ -1,0 +1,5 @@
+<map id="ContactStatePublisher" name="ContactStatePublisher">
+<area shape="rect" id="Node000001" title="Publishes contact states from gazebo." alt="" coords="5,94,157,120"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="42,5,120,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="84,47,84,94,78,94,78,47"/>
+</map>

@@ -1,0 +1,9 @@
+<map id="natnet::MessageInterface" name="natnet::MessageInterface">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,70,173,96"/>
+<area shape="rect" id="Node000002" href="$structnatnet_1_1ConnectionRequestMessage.html" title=" " alt="" coords="223,5,399,46"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="156,63,229,44,230,49,157,68"/>
+<area shape="rect" id="Node000003" href="$classnatnet_1_1DataFrameMessage.html" title=" " alt="" coords="221,70,401,96"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="189,80,220,80,220,86,189,86"/>
+<area shape="rect" id="Node000004" href="$structnatnet_1_1ServerInfoMessage.html" title=" " alt="" coords="223,120,399,145"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="166,97,250,116,249,121,165,102"/>
+</map>

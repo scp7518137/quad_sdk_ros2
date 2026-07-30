@@ -1,0 +1,17 @@
+<map id="RigidBodyDynamics::Errors::RBDLError" name="RigidBodyDynamics::Errors::RBDLError">
+<area shape="rect" id="Node000001" title="Base class for all RBDL exceptions." alt="" coords="154,172,296,213"/>
+<area shape="rect" id="Node000003" href="$classRigidBodyDynamics_1_1Errors_1_1RBDLDofMismatchError.html" title="Thrown if there is a dof mismatch." alt="" coords="359,5,559,46"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="245,157,286,106,313,79,343,57,367,44,369,49,345,61,316,83,290,109,250,161"/>
+<area shape="rect" id="Node000004" href="$classRigidBodyDynamics_1_1Errors_1_1RBDLFileParseError.html" title="Thrown if the file beeing read contains errors." alt="" coords="370,71,548,111"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="269,161,343,122,376,109,378,114,345,127,272,166"/>
+<area shape="rect" id="Node000005" href="$classRigidBodyDynamics_1_1Errors_1_1RBDLInvalidFileError.html" title="Thrown if the specified file could not be found/read." alt="" coords="368,136,550,177"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="311,176,367,168,368,173,312,182"/>
+<area shape="rect" id="Node000006" href="$classRigidBodyDynamics_1_1Errors_1_1RBDLInvalidParameterError.html" title="Thrown if parameter of function was faulty." alt="" coords="362,200,556,256"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="311,203,362,211,361,216,311,208"/>
+<area shape="rect" id="Node000007" href="$classRigidBodyDynamics_1_1Errors_1_1RBDLMissingImplementationError.html" title="Thrown if code path reaches a point that is not implmented yet." alt="" coords="344,280,574,336"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="268,219,345,266,372,278,369,282,343,271,265,224"/>
+<area shape="rect" id="Node000008" href="$classRigidBodyDynamics_1_1Errors_1_1RBDLSizeMismatchError.html" title="Thrown if there is a size mismatch that prevents further calculations." alt="" coords="356,360,562,401"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="245,225,286,287,314,319,346,346,366,357,363,362,342,351,310,323,282,291,241,228"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="5,180,106,205"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="121,190,153,190,153,195,121,195"/>
+</map>

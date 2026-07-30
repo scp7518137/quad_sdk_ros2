@@ -1,0 +1,7 @@
+<map id="RigidBodyDynamics::Errors::RBDLSizeMismatchError" name="RigidBodyDynamics::Errors::RBDLSizeMismatchError">
+<area shape="rect" id="Node000001" title="Thrown if there is a size mismatch that prevents further calculations." alt="" coords="5,168,211,208"/>
+<area shape="rect" id="Node000002" href="$classRigidBodyDynamics_1_1Errors_1_1RBDLError.html" title="Base class for all RBDL exceptions." alt="" coords="37,79,179,120"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="111,135,111,167,105,167,105,135"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="58,5,158,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="111,46,111,79,105,79,105,46"/>
+</map>

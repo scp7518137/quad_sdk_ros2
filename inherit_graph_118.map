@@ -1,0 +1,13 @@
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="Node000000" href="$classurdf_1_1Geometry.html" title=" " alt="" coords="5,104,111,130"/>
+<area shape="rect" id="Node000001" href="$classurdf_1_1Box.html" title=" " alt="" coords="171,5,242,31"/>
+<area shape="poly" id="edge52_Node000000_Node000001" title=" " alt="" coords="85,92,157,40,176,29,179,34,160,44,88,96"/>
+<area shape="rect" id="Node000002" href="$classurdf_1_1Capsule.html" title=" " alt="" coords="159,55,255,80"/>
+<area shape="poly" id="edge53_Node000000_Node000002" title=" " alt="" coords="113,96,165,78,166,83,114,101"/>
+<area shape="rect" id="Node000003" href="$classurdf_1_1Cylinder.html" title=" " alt="" coords="159,104,254,130"/>
+<area shape="poly" id="edge54_Node000000_Node000003" title=" " alt="" coords="126,114,159,114,159,120,126,120"/>
+<area shape="rect" id="Node000004" href="$classurdf_1_1Mesh.html" title=" " alt="" coords="166,153,248,179"/>
+<area shape="poly" id="edge55_Node000000_Node000004" title=" " alt="" coords="114,133,166,150,165,155,113,138"/>
+<area shape="rect" id="Node000005" href="$classurdf_1_1Sphere.html" title=" " alt="" coords="162,203,252,228"/>
+<area shape="poly" id="edge56_Node000000_Node000005" title=" " alt="" coords="88,137,160,189,179,200,176,204,157,194,85,142"/>
+</map>

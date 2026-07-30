@@ -1,0 +1,19 @@
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="Node000000" title=" " alt="" coords="5,209,106,234"/>
+<area shape="rect" id="Node000001" href="$classRigidBodyDynamics_1_1Errors_1_1RBDLError.html" title="Base class for all RBDL exceptions." alt="" coords="156,172,298,213"/>
+<area shape="poly" id="edge29_Node000000_Node000001" title=" " alt="" coords="120,208,155,202,156,207,121,213"/>
+<area shape="rect" id="Node000008" href="$classurdf_1_1URDFParseError.html" title=" " alt="" coords="154,237,300,262"/>
+<area shape="poly" id="edge36_Node000000_Node000008" title=" " alt="" coords="122,230,154,235,153,240,121,235"/>
+<area shape="rect" id="Node000002" href="$classRigidBodyDynamics_1_1Errors_1_1RBDLDofMismatchError.html" title="Thrown if there is a dof mismatch." alt="" coords="363,5,563,46"/>
+<area shape="poly" id="edge30_Node000001_Node000002" title=" " alt="" coords="248,157,290,106,317,79,347,57,372,44,374,49,349,61,320,83,294,109,252,161"/>
+<area shape="rect" id="Node000003" href="$classRigidBodyDynamics_1_1Errors_1_1RBDLFileParseError.html" title="Thrown if the file beeing read contains errors." alt="" coords="374,71,552,111"/>
+<area shape="poly" id="edge31_Node000001_Node000003" title=" " alt="" coords="272,161,347,122,381,109,383,114,349,127,274,166"/>
+<area shape="rect" id="Node000004" href="$classRigidBodyDynamics_1_1Errors_1_1RBDLInvalidFileError.html" title="Thrown if the specified file could not be found/read." alt="" coords="372,136,554,177"/>
+<area shape="poly" id="edge32_Node000001_Node000004" title=" " alt="" coords="313,177,371,168,372,173,314,182"/>
+<area shape="rect" id="Node000005" href="$classRigidBodyDynamics_1_1Errors_1_1RBDLInvalidParameterError.html" title="Thrown if parameter of function was faulty." alt="" coords="366,200,560,256"/>
+<area shape="poly" id="edge33_Node000001_Node000005" title=" " alt="" coords="313,203,366,211,365,216,313,208"/>
+<area shape="rect" id="Node000006" href="$classRigidBodyDynamics_1_1Errors_1_1RBDLMissingImplementationError.html" title="Thrown if code path reaches a point that is not implmented yet." alt="" coords="348,280,578,336"/>
+<area shape="poly" id="edge34_Node000001_Node000006" title=" " alt="" coords="295,218,302,222,326,245,335,255,349,266,371,278,369,282,347,271,332,259,322,249,298,226,292,223"/>
+<area shape="rect" id="Node000007" href="$classRigidBodyDynamics_1_1Errors_1_1RBDLSizeMismatchError.html" title="Thrown if there is a size mismatch that prevents further calculations." alt="" coords="360,360,566,401"/>
+<area shape="poly" id="edge35_Node000001_Node000007" title=" " alt="" coords="300,221,302,223,314,239,321,255,326,287,330,317,337,332,350,346,365,357,362,362,346,350,333,335,325,319,320,288,316,257,310,242,298,226,297,225"/>
+</map>

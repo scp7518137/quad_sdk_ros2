@@ -1,0 +1,19 @@
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="Node000000" href="$classTiXmlBase.html" title=" " alt="" coords="5,105,91,131"/>
+<area shape="rect" id="Node000001" href="$classTiXmlAttribute.html" title=" " alt="" coords="139,80,243,106"/>
+<area shape="poly" id="edge41_Node000000_Node000001" title=" " alt="" coords="105,105,138,99,139,105,106,111"/>
+<area shape="rect" id="Node000002" href="$classTiXmlNode.html" title=" " alt="" coords="148,129,234,155"/>
+<area shape="poly" id="edge42_Node000000_Node000002" title=" " alt="" coords="107,125,148,132,147,138,106,131"/>
+<area shape="rect" id="Node000003" href="$classTiXmlComment.html" title=" " alt="" coords="296,5,407,31"/>
+<area shape="poly" id="edge43_Node000002_Node000003" title=" " alt="" coords="238,119,241,116,257,97,264,79,273,60,289,40,306,29,309,34,293,44,277,63,269,81,261,100,245,120,242,123"/>
+<area shape="rect" id="Node000004" href="$classTiXmlDeclaration.html" title=" " alt="" coords="291,55,411,80"/>
+<area shape="poly" id="edge44_Node000002_Node000004" title=" " alt="" coords="234,120,242,116,290,89,314,78,316,83,292,94,244,121,236,125"/>
+<area shape="rect" id="Node000005" href="$classTiXmlDocument.html" title=" " alt="" coords="294,104,408,130"/>
+<area shape="poly" id="edge45_Node000002_Node000005" title=" " alt="" coords="249,130,293,123,294,128,250,136"/>
+<area shape="rect" id="Node000006" href="$classTiXmlElement.html" title=" " alt="" coords="300,153,402,179"/>
+<area shape="poly" id="edge46_Node000002_Node000006" title=" " alt="" coords="250,148,300,156,299,161,249,153"/>
+<area shape="rect" id="Node000007" href="$classTiXmlText.html" title=" " alt="" coords="311,203,391,228"/>
+<area shape="poly" id="edge47_Node000002_Node000007" title=" " alt="" coords="232,160,292,189,317,200,315,205,290,194,230,165"/>
+<area shape="rect" id="Node000008" href="$classTiXmlUnknown.html" title=" " alt="" coords="296,252,406,278"/>
+<area shape="poly" id="edge48_Node000002_Node000008" title=" " alt="" coords="214,165,249,202,292,239,312,249,309,254,290,243,245,206,210,169"/>
+</map>

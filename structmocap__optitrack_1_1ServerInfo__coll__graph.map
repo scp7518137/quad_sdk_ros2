@@ -1,0 +1,5 @@
+<map id="mocap_optitrack::ServerInfo" name="mocap_optitrack::ServerInfo">
+<area shape="rect" id="Node000001" title="Data object holding server info." alt="" coords="5,109,189,135"/>
+<area shape="rect" id="Node000002" href="$classmocap__optitrack_1_1Version.html" title="\breif Version class containing the version information and helpers for comparison." alt="" coords="13,5,181,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="100,47,100,109,94,109,94,47"/>
+</map>

@@ -1,0 +1,9 @@
+<map id="mocap_optitrack::DataModel" name="mocap_optitrack::DataModel">
+<area shape="rect" id="Node000001" title="The data model for this node." alt="" coords="58,198,244,223"/>
+<area shape="rect" id="Node000002" href="$structmocap__optitrack_1_1ModelFrame.html" title="Data object holding poses of a tracked model&#39;s components." alt="" coords="5,109,201,135"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="119,147,147,196,142,199,115,150"/>
+<area shape="rect" id="Node000003" href="$structmocap__optitrack_1_1ServerInfo.html" title="Data object holding server info." alt="" coords="225,109,408,135"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="281,145,175,199,173,195,278,140"/>
+<area shape="rect" id="Node000004" href="$classmocap__optitrack_1_1Version.html" title="\breif Version class containing the version information and helpers for comparison." alt="" coords="233,5,400,31"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="319,47,319,109,314,109,314,47"/>
+</map>

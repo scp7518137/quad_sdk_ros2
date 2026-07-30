@@ -1,0 +1,10 @@
+<map id="urdf::Joint" name="urdf::Joint">
+<area shape="rect" id="Node000001" title=" " alt="" coords="34,183,111,208"/>
+<area shape="rect" id="Node000002" href="$structurdf_1_1Vector3.html" title=" " alt="" coords="5,5,100,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="58,46,65,119,73,182,68,182,60,120,52,46"/>
+<area shape="rect" id="Node000003" href="$structurdf_1_1Transform.html" title=" " alt="" coords="101,94,209,120"/>
+<area shape="poly" id="edge3_Node000003_Node000002" title=" " alt="" coords="78,39,112,68,141,91,138,96,108,72,75,43"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="135,133,86,184,82,180,131,129"/>
+<area shape="rect" id="Node000004" href="$structurdf_1_1Rotation.html" title=" " alt="" coords="125,5,222,31"/>
+<area shape="poly" id="edge4_Node000003_Node000004" title=" " alt="" coords="171,47,160,94,155,93,165,46"/>
+</map>

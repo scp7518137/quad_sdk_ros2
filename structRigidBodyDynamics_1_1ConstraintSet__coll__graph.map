@@ -1,0 +1,21 @@
+<map id="RigidBodyDynamics::ConstraintSet" name="RigidBodyDynamics::ConstraintSet">
+<area shape="rect" id="Node000001" title="Structure that contains both constraint information and workspace memory." alt="" coords="170,516,312,556"/>
+<area shape="rect" id="Node000002" href="$structRigidBodyDynamics_1_1ConstraintCache.html" title=" " alt="" coords="170,412,312,453"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="244,468,244,515,239,515,239,468"/>
+<area shape="rect" id="Node000003" href="$classVector3__t.html" title=" " alt="" coords="187,88,264,114"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="232,128,240,184,253,286,255,331,252,388,248,412,243,411,247,388,250,331,248,286,235,184,227,129"/>
+<area shape="rect" id="Node000009" href="$structRigidBodyDynamics_1_1Math_1_1SpatialTransform.html" title="Compact representation of spatial transformations." alt="" coords="70,209,226,249"/>
+<area shape="poly" id="edge10_Node000009_Node000003" title=" " alt="" coords="212,128,162,209,158,207,208,125"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="170,5,281,31"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="228,47,228,88,223,88,223,47"/>
+<area shape="rect" id="Node000005" href="$classMatrix3__t.html" title=" " alt="" coords="51,88,125,114"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="63,126,39,152,20,185,12,210,8,230,11,250,20,273,35,297,54,319,98,358,145,387,190,409,188,414,143,392,95,362,50,323,31,300,15,275,5,251,3,230,7,208,15,183,35,149,59,122"/>
+<area shape="poly" id="edge9_Node000009_Node000005" title=" " alt="" coords="103,127,141,207,136,209,98,129"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="34,5,142,31"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="91,47,91,88,85,88,85,47"/>
+<area shape="rect" id="Node000007" href="$classSpatialVector__t.html" title=" " alt="" coords="337,216,447,242"/>
+<area shape="poly" id="edge6_Node000002_Node000007" title=" " alt="" coords="381,257,345,320,294,390,269,413,266,409,290,386,341,317,377,254"/>
+<area shape="rect" id="Node000008" title=" " alt="" coords="318,80,466,121"/>
+<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="395,137,395,216,389,216,389,137"/>
+<area shape="poly" id="edge8_Node000002_Node000009" title=" " alt="" coords="166,262,235,410,230,413,161,265"/>
+</map>

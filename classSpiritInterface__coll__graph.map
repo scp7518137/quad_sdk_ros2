@@ -1,0 +1,18 @@
+<map id="SpiritInterface" name="SpiritInterface">
+<area shape="rect" id="Node000001" title="Hardware interface for the Spirit40 quadruped from Ghost Robotics." alt="" coords="40,450,142,476"/>
+<area shape="rect" id="Node000002" href="$classHardwareInterface.html" title="Implements an abstract class for robot hardware interfaces." alt="" coords="5,361,134,387"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="79,402,90,449,85,450,74,403"/>
+<area shape="rect" id="Node000003" href="$classgr_1_1MBLink.html" title=" " alt="" coords="157,361,240,387"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="174,399,108,451,104,447,170,395"/>
+<area shape="rect" id="Node000004" href="$classgr_1_1MBLinkProtocol.html" title=" " alt="" coords="133,286,264,312"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="202,327,202,361,196,361,196,327"/>
+<area shape="rect" id="Node000005" href="$struct____mavlink__status.html" title=" " alt="" coords="217,198,340,223"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="219,233,203,249,197,267,199,286,193,286,192,266,198,246,215,229"/>
+<area shape="rect" id="Node000006" href="$struct____mavlink__signing.html" title=" " alt="" coords="344,286,472,312"/>
+<area shape="poly" id="edge6_Node000006_Node000005" title=" " alt="" coords="273,239,273,251,277,261,286,268,302,275,344,286,343,291,301,280,284,273,273,264,268,252,267,239"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="430,273,437,260,434,249,420,240,398,232,341,221,342,215,399,226,423,235,438,246,442,261,435,276"/>
+<area shape="rect" id="Node000007" href="$struct____mavlink__signing__streams.html" title=" " alt="" coords="188,109,370,135"/>
+<area shape="poly" id="edge7_Node000005_Node000007" title=" " alt="" coords="282,150,282,197,276,197,276,150"/>
+<area shape="rect" id="Node000008" href="$struct____mavlink__signing__streams_1_1____mavlink__signing__stream.html" title=" " alt="" coords="188,5,370,46"/>
+<area shape="poly" id="edge8_Node000007_Node000008" title=" " alt="" coords="282,61,282,109,276,109,276,61"/>
+</map>

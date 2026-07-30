@@ -1,0 +1,13 @@
+<map id="mocap_optitrack::OptiTrackRosBridge" name="mocap_optitrack::OptiTrackRosBridge">
+<area shape="rect" id="Node000001" title=" " alt="" coords="95,286,275,327"/>
+<area shape="rect" id="Node000002" href="$structmocap__optitrack_1_1ServerDescription.html" title="Server communication info." alt="" coords="5,198,232,223"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="138,234,173,284,169,287,133,237"/>
+<area shape="rect" id="Node000003" href="$classmocap__optitrack_1_1DataModel.html" title="The data model for this node." alt="" coords="255,198,440,223"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="316,234,264,265,222,288,219,284,261,260,314,229"/>
+<area shape="rect" id="Node000004" href="$structmocap__optitrack_1_1ModelFrame.html" title="Data object holding poses of a tracked model&#39;s components." alt="" coords="173,109,368,135"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="293,145,339,196,335,199,290,148"/>
+<area shape="rect" id="Node000005" href="$structmocap__optitrack_1_1ServerInfo.html" title="Data object holding server info." alt="" coords="392,109,576,135"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="454,145,368,199,366,195,451,141"/>
+<area shape="rect" id="Node000006" href="$classmocap__optitrack_1_1Version.html" title="\breif Version class containing the version information and helpers for comparison." alt="" coords="400,5,568,31"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="486,47,486,109,481,109,481,47"/>
+</map>

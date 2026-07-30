@@ -1,0 +1,7 @@
+<map id="urdf::Box" name="urdf::Box">
+<area shape="rect" id="Node000001" title=" " alt="" coords="84,94,155,120"/>
+<area shape="rect" id="Node000002" href="$classurdf_1_1Geometry.html" title=" " alt="" coords="5,5,111,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="78,42,113,92,109,95,73,45"/>
+<area shape="rect" id="Node000003" href="$structurdf_1_1Vector3.html" title=" " alt="" coords="135,5,229,31"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="166,45,130,95,126,92,162,42"/>
+</map>

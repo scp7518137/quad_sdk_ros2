@@ -1,0 +1,7 @@
+<map id="RigidBodyDynamics::Errors::RBDLMissingImplementationError" name="RigidBodyDynamics::Errors::RBDLMissingImplementationError">
+<area shape="rect" id="Node000001" title="Thrown if code path reaches a point that is not implmented yet." alt="" coords="5,168,236,223"/>
+<area shape="rect" id="Node000002" href="$classRigidBodyDynamics_1_1Errors_1_1RBDLError.html" title="Base class for all RBDL exceptions." alt="" coords="49,79,192,120"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="123,135,123,167,118,167,118,135"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="70,5,171,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="123,46,123,79,118,79,118,46"/>
+</map>

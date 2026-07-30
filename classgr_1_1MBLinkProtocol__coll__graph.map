@@ -1,0 +1,12 @@
+<map id="gr::MBLinkProtocol" name="gr::MBLinkProtocol">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,286,137,312"/>
+<area shape="rect" id="Node000002" href="$struct____mavlink__status.html" title=" " alt="" coords="89,198,213,223"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="91,233,75,249,69,267,71,286,65,286,64,266,70,246,88,229"/>
+<area shape="rect" id="Node000003" href="$struct____mavlink__signing.html" title=" " alt="" coords="216,286,344,312"/>
+<area shape="poly" id="edge3_Node000003_Node000002" title=" " alt="" coords="145,239,145,251,149,261,159,268,174,275,216,286,215,291,173,280,156,273,145,264,140,252,140,239"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="302,273,309,260,306,249,293,240,270,232,213,221,214,215,271,226,295,235,311,246,314,261,307,276"/>
+<area shape="rect" id="Node000004" href="$struct____mavlink__signing__streams.html" title=" " alt="" coords="60,109,242,135"/>
+<area shape="poly" id="edge4_Node000002_Node000004" title=" " alt="" coords="154,150,154,197,148,197,148,150"/>
+<area shape="rect" id="Node000005" href="$struct____mavlink__signing__streams_1_1____mavlink__signing__stream.html" title=" " alt="" coords="60,5,242,46"/>
+<area shape="poly" id="edge5_Node000004_Node000005" title=" " alt="" coords="154,61,154,109,148,109,148,61"/>
+</map>
