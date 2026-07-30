@@ -1,0 +1,1 @@
+{/**: {ros__parameters: {remote_heartbeat: {update_rate: 500, robot_latency_threshold_warn: 0.02, robot_latency_threshold_error: 0.1}}}}

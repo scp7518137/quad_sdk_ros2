@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<package format="3">
+  <name>spirit_description</name>
+  <version>0.0.0</version>
+  <description>URDF, meshes, and materials for the Ghost Robotics Spirit 40</description>
+
+  <maintainer email="vvasilo@seas.upenn.edu">vasilisvasilop</maintainer>
+
+  <license>MIT</license>
+
+  <buildtool_depend>ament_cmake</buildtool_depend>
+
+  <export>
+    <build_type>ament_cmake</build_type>
+  </export>
+</package>

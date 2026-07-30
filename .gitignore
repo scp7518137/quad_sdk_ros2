@@ -1,8 +1,10 @@
 docs/
 *.pyc
-*.vscode
 **/build/
 *.vscode
 external/ipopt/*
 !external/ipopt/.gitkeep
 *.csv
+install/
+log/
+**/rbdl_build/

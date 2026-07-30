@@ -1,0 +1,1 @@
+{/**: {ros__parameters: {rviz_interface: {update_rate: 100, orientation_subsample_num: 3, colors: {front_left: [166, 25, 46], back_left: [0, 45, 114], front_right: [0, 132, 61], back_right: [242, 169, 0], net_grf: [55, 51, 58], individual_grf: [45, 31, 38]}}}}}

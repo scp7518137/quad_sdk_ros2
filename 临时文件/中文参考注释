@@ -1,0 +1,64 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>quad_msgs</name>
+  <version>0.0.0</version>
+  <description>quad_msgs 包</description>
+
+  <!-- 至少需要一个维护者标签，允许多个，每个标签对应一个人 -->
+  <!-- 示例： -->
+  <!-- <maintainer email="jane.doe@example.com">Jane Doe</maintainer> -->
+  <maintainer email="nflowers@MIT.MIT">nflowers</maintainer>
+
+
+  <!-- 至少需要一个许可证标签，允许多个，每个标签对应一个许可证 -->
+  <!-- 常用许可证字符串： -->
+  <!--   BSD, MIT, Boost Software License, GPLv2, GPLv3, LGPLv2.1, LGPLv3 -->
+  <license>MIT</license>
+
+
+  <!-- URL 标签是可选的，允许多个，每个标签对应一个 URL -->
+  <!-- 可选的 type 属性值：website（网站）、bugtracker（问题追踪）、repository（代码仓库） -->
+  <!-- 示例： -->
+  <!-- <url type="website">http://wiki.ros.org/quad_msgs</url> -->
+
+
+  <!-- 作者标签是可选的，允许多个，每个标签对应一个人 -->
+  <!-- 作者不一定是维护者，但也可以是 -->
+  <!-- 示例： -->
+  <!-- <author email="jane.doe@example.com">Jane Doe</author> -->
+
+
+  <!-- *depend 系列标签用于指定依赖关系 -->
+  <!-- 依赖可以是 catkin 包或系统依赖 -->
+  <!-- 示例： -->
+  <!-- 使用 depend 作为同时需要构建依赖和运行依赖的包的快捷方式 -->
+  <!--   <depend>roscpp</depend> -->
+  <!--   注意，这等价于： -->
+  <!--   <build_depend>roscpp</build_depend> -->
+  <!--   <exec_depend>roscpp</exec_depend> -->
+  <!-- 使用 build_depend 指定编译时需要的包： -->
+  <!--   <build_depend>message_generation</build_depend> -->
+  <!-- 使用 build_export_depend 指定构建时依赖本包所需要的包： -->
+  <!--   <build_export_depend>message_generation</build_export_depend> -->
+  <!-- 使用 buildtool_depend 指定构建工具包： -->
+  <!--   <buildtool_depend>catkin</buildtool_depend> -->
+  <!-- 使用 exec_depend 指定运行时需要的包： -->
+  <!--   <exec_depend>message_runtime</exec_depend> -->
+  <!-- 使用 test_depend 指定仅测试时需要的包： -->
+  <!--   <test_depend>gtest</test_depend> -->
+  <!-- 使用 doc_depend 指定仅构建文档时需要的包： -->
+  <!--   <doc_depend>doxygen</doc_depend> -->
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <depend>sensor_msgs</depend>
+  <depend>std_msgs</depend>
+  <depend>nav_msgs</depend>
+  <depend>message_runtime</depend>
+  <depend>message_generation</depend>
+
+  <!-- export 标签包含其他未指定的标签 -->
+  <export>
+    <!-- 其他工具可以在此处放置额外信息 -->
+
+  </export>
+</package>

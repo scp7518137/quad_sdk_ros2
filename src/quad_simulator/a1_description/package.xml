@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<package format="3">
+    <name>a1_description</name>
+    <version>0.0.0</version>
+    <description>The a1_description package</description>
+
+    <maintainer email="jimingre@andrew.cmu.edu">unitree</maintainer>
+    <license>MIT</license>
+
+    <buildtool_depend>ament_cmake</buildtool_depend>
+
+    <export>
+        <build_type>ament_cmake</build_type>
+    </export>
+</package>
