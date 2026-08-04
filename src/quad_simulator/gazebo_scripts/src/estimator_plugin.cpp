@@ -1,6 +1,7 @@
 #include "estimator_plugin.h"
 
 #include <iostream>
+
 namespace gazebo {
 
 QuadEstimatorGroundTruth::QuadEstimatorGroundTruth() {}
@@ -11,42 +12,51 @@ void QuadEstimatorGroundTruth::Load(physics::ModelPtr _parent,
   model_ = _parent;
 
   last_time_ = model_->GetWorld()->SimTime();
+
   // Load update rate from SDF
   if (_sdf->HasElement("updateRateHZ")) {
     update_rate_ = _sdf->Get<double>("updateRateHZ");
-    ROS_INFO_STREAM("Ground Truth State Estimator: <updateRateHZ> set to: "
-                    << update_rate_);
+    RCLCPP_INFO(rclcpp::get_logger("GroundTruthEstimator"),
+                "Ground Truth State Estimator: <updateRateHZ> set to: %f",
+                update_rate_);
   } else {
     update_rate_ = 500.0;
-    ROS_WARN_STREAM(
-        "Ground Truth State Estimator: missing <updateRateHZ>, set to default: "
-        << update_rate_);
+    RCLCPP_INFO(rclcpp::get_logger("GroundTruthEstimator"),
+                "Ground Truth State Estimator: missing <updateRateHZ>, "
+                "defaulting to %f",
+                update_rate_);
   }
 
-  // Setup state estimate publisher
-  auto robot_ns = model_->GetName();
-  ros::NodeHandle nh(robot_ns);
+  // Setup ROS2 node
+  if (!rclcpp::ok()) {
+    rclcpp::init(0, nullptr);
+  }
 
-  // Load rosparams from parameter server
+  auto robot_ns = model_->GetName();
+  ros_node_ = std::make_shared<rclcpp::Node>(robot_ns);
+
+  // Load params from parameter server
   std::string ground_truth_state_topic, ground_truth_state_body_frame_topic;
 
-  quad_utils::loadROSParam(nh, "topics/state/ground_truth",
+  quad_utils::loadROSParam(ros_node_, "topics/state/ground_truth",
                            ground_truth_state_topic);
-  quad_utils::loadROSParam(nh, "topics/state/ground_truth_body_frame",
+  quad_utils::loadROSParam(ros_node_, "topics/state/ground_truth_body_frame",
                            ground_truth_state_body_frame_topic);
 
   ground_truth_state_pub_ =
-      nh.advertise<quad_msgs::RobotState>(ground_truth_state_topic, 1);
-  ground_truth_state_body_frame_pub_ = nh.advertise<quad_msgs::RobotState>(
-      ground_truth_state_body_frame_topic, 1);
+      ros_node_->create_publisher<quad_msgs::msg::RobotState>(
+          ground_truth_state_topic, 1);
+  ground_truth_state_body_frame_pub_ =
+      ros_node_->create_publisher<quad_msgs::msg::RobotState>(
+          ground_truth_state_body_frame_topic, 1);
 
   // Listen to the update event. This event is broadcast every
   // simulation iteration.
   updateConnection_ = event::Events::ConnectWorldUpdateBegin(
       std::bind(&QuadEstimatorGroundTruth::OnUpdate, this));
 
-  // Convert kinematics
-  quadKD_ = std::make_shared<quad_utils::QuadKD>(robot_ns);
+  // Convert kinematics (QuadKD takes rclcpp::Node::SharedPtr + namespace)
+  quadKD_ = std::make_shared<quad_utils::QuadKD>(ros_node_, robot_ns);
 }
 
 void QuadEstimatorGroundTruth::OnUpdate() {
@@ -59,8 +69,6 @@ void QuadEstimatorGroundTruth::OnUpdate() {
   // Extract all relevant information from simulator
   physics::LinkPtr body_link = model_->GetChildLink("body");
 
-  ignition::math::Vector3d toe_offset(0.206, 0, 0);
-
   physics::LinkPtr lower0 = model_->GetChildLink("lower0");
   physics::LinkPtr lower1 = model_->GetChildLink("lower1");
   physics::LinkPtr lower2 = model_->GetChildLink("lower2");
@@ -72,9 +80,9 @@ void QuadEstimatorGroundTruth::OnUpdate() {
   physics::LinkPtr toe3 = model_->GetChildLink("toe3");
 
   if (!body_link) {
-    ROS_ERROR(
-        "Can't find body link in sdf. Make sure the name in the plugin matches "
-        "the sdf.");
+    RCLCPP_ERROR(rclcpp::get_logger("GroundTruthEstimator"),
+                 "Can't find body link in sdf. Make sure the name in the "
+                 "plugin matches the sdf.");
     return;
   }
 
@@ -82,7 +90,6 @@ void QuadEstimatorGroundTruth::OnUpdate() {
   ignition::math::Vector3d lin_pos = pose.Pos();
   ignition::math::Quaternion<double> ang_pos = pose.Rot();
   ignition::math::Vector3d lin_vel = body_link->WorldLinearVel();
-  // ignition::math::Vector3d ang_vel = body_link->WorldAngularVel();
   ignition::math::Vector3d ang_vel = body_link->RelativeAngularVel();
 
   ignition::math::Pose3d toe0_pose = toe0->WorldPose();
@@ -102,7 +109,7 @@ void QuadEstimatorGroundTruth::OnUpdate() {
   ignition::math::Vector3d toe3_vel = toe3->WorldLinearVel();
 
   // Update and publish state estimate message
-  quad_msgs::RobotState state;
+  quad_msgs::msg::RobotState state;
   state.body.pose.position.x = lin_pos.X();
   state.body.pose.position.y = lin_pos.Y();
   state.body.pose.position.z = lin_pos.Z();
@@ -124,15 +131,9 @@ void QuadEstimatorGroundTruth::OnUpdate() {
                        "10", "4", "5", "11", "6", "7"};
 
   for (int i = 0; i < num_joints; i++) {
-    // std::cout << joint->GetName() << std::endl;
-    // std::cout << joint->Position() << std::endl;
-    // std::cout << joint->GetVelocity(0) << std::endl;
-
-    physics::JointPtr joint = model_-> GetJoint(state.joints.name[i]);
-    // physics::JointWrench wrench = joint->GetForceTorque(0);
-    double torque = 0;  // wrench.body1Torque.Z();
-                        // Note that this doesn't
-                        // seem to work but at least will populate with zeros
+    physics::JointPtr joint = model_->GetJoint(state.joints.name[i]);
+    double torque = 0;  // Note that GetForceTorque doesn't seem to work
+                        // but at least will populate with zeros
 
     state.joints.position.push_back(joint->Position());
     state.joints.velocity.push_back(joint->GetVelocity(0));
@@ -150,37 +151,30 @@ void QuadEstimatorGroundTruth::OnUpdate() {
         state.feet.feet[i].position.x = toe0_pos.X();
         state.feet.feet[i].position.y = toe0_pos.Y();
         state.feet.feet[i].position.z = toe0_pos.Z();
-
         state.feet.feet[i].velocity.x = toe0_vel.X();
         state.feet.feet[i].velocity.y = toe0_vel.Y();
         state.feet.feet[i].velocity.z = toe0_vel.Z();
         break;
-
       case 1:
         state.feet.feet[i].position.x = toe1_pos.X();
         state.feet.feet[i].position.y = toe1_pos.Y();
         state.feet.feet[i].position.z = toe1_pos.Z();
-
         state.feet.feet[i].velocity.x = toe1_vel.X();
         state.feet.feet[i].velocity.y = toe1_vel.Y();
         state.feet.feet[i].velocity.z = toe1_vel.Z();
         break;
-
       case 2:
         state.feet.feet[i].position.x = toe2_pos.X();
         state.feet.feet[i].position.y = toe2_pos.Y();
         state.feet.feet[i].position.z = toe2_pos.Z();
-
         state.feet.feet[i].velocity.x = toe2_vel.X();
         state.feet.feet[i].velocity.y = toe2_vel.Y();
         state.feet.feet[i].velocity.z = toe2_vel.Z();
         break;
-
       case 3:
         state.feet.feet[i].position.x = toe3_pos.X();
         state.feet.feet[i].position.y = toe3_pos.Y();
         state.feet.feet[i].position.z = toe3_pos.Z();
-
         state.feet.feet[i].velocity.x = toe3_vel.X();
         state.feet.feet[i].velocity.y = toe3_vel.Y();
         state.feet.feet[i].velocity.z = toe3_vel.Z();
@@ -188,10 +182,10 @@ void QuadEstimatorGroundTruth::OnUpdate() {
     }
   }
 
-  state.header.stamp = ros::Time::now();
-  ground_truth_state_pub_.publish(state);
+  state.header.stamp = ros_node_->now();
+  ground_truth_state_pub_->publish(state);
 
-  quad_msgs::RobotState state_body_frame = state;
+  quad_msgs::msg::RobotState state_body_frame = state;
   state_body_frame.body.pose.orientation.x = 0;
   state_body_frame.body.pose.orientation.y = 0;
   state_body_frame.body.pose.orientation.z = 0;
@@ -199,8 +193,11 @@ void QuadEstimatorGroundTruth::OnUpdate() {
   state_body_frame.body.pose.position.x = 0;
   state_body_frame.body.pose.position.y = 0;
   state_body_frame.body.pose.position.z = 0;
-  ground_truth_state_body_frame_pub_.publish(state_body_frame);
+  ground_truth_state_body_frame_pub_->publish(state_body_frame);
 
   last_time_ = current_time;
+
+  rclcpp::spin_some(ros_node_);
 }
+
 }  // namespace gazebo

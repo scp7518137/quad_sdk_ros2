@@ -29,13 +29,10 @@ SOFTWARE.
 using namespace gazebo;
 GZ_REGISTER_SENSOR_PLUGIN(ContactPlugin)
 
-/////////////////////////////////////////////////
 ContactPlugin::ContactPlugin() : SensorPlugin() {}
 
-/////////////////////////////////////////////////
 ContactPlugin::~ContactPlugin() {}
 
-/////////////////////////////////////////////////
 void ContactPlugin::Load(sensors::SensorPtr _sensor, sdf::ElementPtr /*_sdf*/) {
   // Get the parent sensor.
   this->parentSensor =
@@ -54,23 +51,20 @@ void ContactPlugin::Load(sensors::SensorPtr _sensor, sdf::ElementPtr /*_sdf*/) {
   // Make sure the parent sensor is active.
   this->parentSensor->SetActive(true);
 
-  // Initialize ROS if necessary
-  if (!ros::isInitialized()) {
-    int argc = 0;
-    char **argv = NULL;
-    ros::init(argc, argv, "ContactPublisher",
-              ros::init_options::NoSigintHandler);
+  // Initialize ROS2 if necessary
+  if (!rclcpp::ok()) {
+    rclcpp::init(0, nullptr);
   }
 
-  // Initialize node
-  this->rosNode.reset(new ros::NodeHandle("ContactPublisher"));
+  // Create ROS2 node
+  ros_node_ = std::make_shared<rclcpp::Node>("ContactPublisher");
 
-  // Initialize Publishers
-  this->contact_publisher = this->rosNode->advertise<quad_msgs::ContactMode>(
-      "/gazebo/toe_forces", 1, true);
+  // Initialize publisher
+  contact_publisher_ =
+      ros_node_->create_publisher<quad_msgs::msg::ContactMode>(
+          "/gazebo/toe_forces", 1);
 }
 
-/////////////////////////////////////////////////
 void ContactPlugin::OnUpdate() {
   // Get all the contacts.
   msgs::Contacts contacts;
@@ -78,7 +72,7 @@ void ContactPlugin::OnUpdate() {
 
   // Initialize outgoing messages with zeros (send zero contact force if no
   // contact detected)
-  quad_msgs::ContactMode contact_msg;
+  quad_msgs::msg::ContactMode contact_msg;
   contact_msg.leg_contacts.resize(4);
 
   std::string toe_collision_names[4] = {"toe0_collision", "toe1_collision",
@@ -86,34 +80,36 @@ void ContactPlugin::OnUpdate() {
 
   // Assume no contact
   for (unsigned int i = 0; i < 4; ++i) {
-    contact_msg.leg_contacts.at(i).contact_prob = 0.0;
-    contact_msg.leg_contacts.at(i).contact_state = false;
-    contact_msg.leg_contacts.at(i).contact_forces.x = 0;
-    contact_msg.leg_contacts.at(i).contact_forces.y = 0;
-    contact_msg.leg_contacts.at(i).contact_forces.z = 0;
+    contact_msg.leg_contacts[i].contact_prob = 0.0;
+    contact_msg.leg_contacts[i].contact_state = false;
+    contact_msg.leg_contacts[i].contact_forces.x = 0;
+    contact_msg.leg_contacts[i].contact_forces.y = 0;
+    contact_msg.leg_contacts[i].contact_forces.z = 0;
   }
 
   // Populate messages with contact forces
-
-  for (unsigned int i = 0; i < contacts.contact_size(); ++i) {
+  for (int i = 0; i < contacts.contact_size(); ++i) {
     std::string str = contacts.contact(i).collision1();
     for (unsigned int j = 0; j < 4; ++j) {
       std::string toe_string = toe_collision_names[j];
       std::size_t found_toe = str.find(toe_string);
       if (found_toe != std::string::npos) {
-        contact_msg.leg_contacts.at(j).contact_prob = 1.0;
-        contact_msg.leg_contacts.at(j).contact_state = true;
-        for (unsigned int k = 0; k < contacts.contact(i).position_size(); ++k) {
-          contact_msg.leg_contacts.at(j).contact_forces.x -=
+        contact_msg.leg_contacts[j].contact_prob = 1.0;
+        contact_msg.leg_contacts[j].contact_state = true;
+        for (int k = 0; k < contacts.contact(i).position_size(); ++k) {
+          contact_msg.leg_contacts[j].contact_forces.x -=
               contacts.contact(i).wrench(k).body_1_wrench().force().x();
-          contact_msg.leg_contacts.at(j).contact_forces.y -=
+          contact_msg.leg_contacts[j].contact_forces.y -=
               contacts.contact(i).wrench(k).body_1_wrench().force().y();
-          contact_msg.leg_contacts.at(j).contact_forces.z -=
+          contact_msg.leg_contacts[j].contact_forces.z -=
               contacts.contact(i).wrench(k).body_1_wrench().force().z();
         }
       }
     }
   }
 
-  this->contact_publisher.publish(contact_msg);
+  contact_publisher_->publish(contact_msg);
+
+  // Spin rclcpp to process any pending work
+  rclcpp::spin_some(ros_node_);
 }

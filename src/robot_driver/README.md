@@ -16,10 +16,7 @@ This is research code, expect that it changes often and any fitness for a partic
 
 ### Unit Tests
 
-Run the unit tests with
-
-	catkin run_tests robot_driver
-
+	colcon test --packages-select robot_driver
 ## Usage
 
 Robot driver is called by quad_gazebo.launch and is not meant to be used standalone.  

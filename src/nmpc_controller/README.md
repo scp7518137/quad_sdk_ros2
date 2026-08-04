@@ -29,10 +29,7 @@ If you use this work in an academic context, please cite the following publicati
 
 ### Unit Tests
 
-Run the unit tests with
-
-	catkin run_tests nmpc_controller
-
+	colcon test --packages-select nmpc_controller
 ## Usage
 
 It is a C++ class that can be included in other ROS packages.

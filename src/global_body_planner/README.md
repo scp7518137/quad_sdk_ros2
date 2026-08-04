@@ -33,16 +33,10 @@ If you use this work in an academic context, please cite the following publicati
 
 ### Unit Tests
 
-Run the unit tests with
-
-	catkin run_tests global_body_planner
-
+	colcon test --packages-select global_body_planner
 ## Usage
 
-Run the main node with
-
-	roslaunch quad_utils planning.launch reference:=gbpl
-	
+	ros2 launch quad_utils planning.launch.py reference:=gbpl
 Leaping can be disabled with the optional argument `leaping:=false`, which internally skips the leap action sampling procedure and relaxes the kinematics bounds on collision checking.
 
 ## Config files

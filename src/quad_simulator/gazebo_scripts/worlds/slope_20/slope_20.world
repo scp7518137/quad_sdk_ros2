@@ -14,21 +14,18 @@
       <shadows>false</shadows>
     </scene>
     <gravity>0 0 -9.81</gravity>
-    <include>
-      <uri>model://custom_sun</uri>
-    </include>
     <model name="mesh_terrain">
       <pose>-2 -2 -0.1  0 0 0</pose>
       <static>true</static>
       <link name="body">
         <visual name="visual">
           <geometry>
-            <mesh><uri>model:///slope_20/slope_20.stl</uri></mesh>
+            <mesh><uri>model://slope_20/slope_20.stl</uri></mesh>
           </geometry>
         </visual>
         <collision name="collision">
           <geometry>
-            <mesh><uri>model:///slope_20/slope_20.stl</uri></mesh>
+            <mesh><uri>model://slope_20/slope_20.stl</uri></mesh>
           </geometry>
           <surface>
             <friction>

@@ -1,83 +1,48 @@
 #ifndef CONTACT_STATE_PUBLISHER_H
 #define CONTACT_STATE_PUBLISHER_H
 
-#include <gazebo_msgs/ContactsState.h>
-#include <geometry_msgs/TransformStamped.h>
-#include <quad_msgs/GRFArray.h>
+#include <gazebo_msgs/msg/contacts_state.hpp>
+#include <geometry_msgs/msg/transform_stamped.hpp>
+#include <quad_msgs/msg/grf_array.hpp>
 #include <quad_utils/ros_utils.h>
-#include <ros/ros.h>
+#include <rclcpp/rclcpp.hpp>
+#include <tf2_ros/buffer.h>
 #include <tf2_ros/transform_listener.h>
 
 #include <cmath>
-#include <eigen3/Eigen/Eigen>
-#define MATH_PI 3.141592
+#include <memory>
+#include <string>
 
-//! Publishes contact states from gazebo
-/*!
-   This class subscribes to Gazebo contact state messages and publishes their
-   data under one GRFArray message.
-*/
-class ContactStatePublisher {
+class ContactStatePublisher : public rclcpp::Node {
  public:
-  /**
-   * @brief Constructor for ContactStatePublisher
-   * @param[in] nh ROS NodeHandle to publish and subscribe from
-   * @return Constructed object of type ContactStatePublisher
-   */
-  ContactStatePublisher(ros::NodeHandle nh);
-  /**
-   * @brief Calls ros spinOnce and pubs data at set frequency
-   */
-  void spin();
+  ContactStatePublisher();
+
+  /// Must be called after make_shared to safely use shared_from_this().
+  void init();
 
  private:
-  /**
-   * @brief Processes new contact state data
-   * @param[in] msg New contact state data
-   */
-  void contactStateCallback(const gazebo_msgs::ContactsState::ConstPtr& msg,
-                            const int toe_idx);
-
-  /**
-   * @brief Publishes current contact state data
-   */
+  void contactStateCallback(
+      const gazebo_msgs::msg::ContactsState& msg, const int toe_idx);
   void publishContactState();
 
-  /// Subscriber for toe 0
-  ros::Subscriber toe0_contact_state_sub;
+  rclcpp::Subscription<gazebo_msgs::msg::ContactsState>::SharedPtr
+      toe0_contact_state_sub;
+  rclcpp::Subscription<gazebo_msgs::msg::ContactsState>::SharedPtr
+      toe1_contact_state_sub;
+  rclcpp::Subscription<gazebo_msgs::msg::ContactsState>::SharedPtr
+      toe2_contact_state_sub;
+  rclcpp::Subscription<gazebo_msgs::msg::ContactsState>::SharedPtr
+      toe3_contact_state_sub;
 
-  /// Subscriber for toe 1
-  ros::Subscriber toe1_contact_state_sub;
+  std::unique_ptr<tf2_ros::Buffer> buffer_;
+  std::shared_ptr<tf2_ros::TransformListener> listener_;
+  rclcpp::Publisher<quad_msgs::msg::GRFArray>::SharedPtr grf_pub_;
+  rclcpp::TimerBase::SharedPtr timer_;
 
-  /// Subscriber for toe 2
-  ros::Subscriber toe2_contact_state_sub;
-
-  /// Subscriber for toe 3
-  ros::Subscriber toe3_contact_state_sub;
-
-  /// Tf2 buffer
-  tf2_ros::Buffer buffer_;
-
-  /// TF transform listener
-  tf2_ros::TransformListener listener_;
-
-  /// ROS publisher for desired GRF
-  ros::Publisher grf_pub_;
-
-  /// Nodehandle to pub to and sub from
-  ros::NodeHandle nh_;
-
-  /// Update rate for sending and receiving data;
   double update_rate_;
-
-  /// Number of feet
   const int num_feet_ = 4;
-
-  /// Most recent local plan
-  quad_msgs::GRFArray grf_array_msg_;
-
-  /// Publish ready indicator
+  quad_msgs::msg::GRFArray grf_array_msg_;
   bool ready_to_publish_;
 };
 
-#endif  // CONTACT_STATE_PUBLISHER_H
+#endif
