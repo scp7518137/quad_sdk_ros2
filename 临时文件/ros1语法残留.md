@@ -134,17 +134,22 @@
 
 ---
 
-## 总结
 
 ```
-  🔴 严重 (整包ROS1):  2 包  ─ grid_map_pcl, gazebo_scripts
-  🟡 中等 (单文件):     2 个  ─ twist_key_controller.py, test_joy_twist.py
-  ⚪ 遗留测试文件:       8 个  ─ teleop_twist_joy/test/*.test
-  🟢 无害注释:          ~20 处 ─ 注释/README 中的 catkin/ROS1 引用
+  🔴 严重 (整包ROS1 — 已迁移):  1 包  ─ grid_map_pcl (系统包替代)
+  ✅ 已迁移 (整包ROS1):         1 包  ─ gazebo_scripts → 全部 ROS2 (12 源文件 + 5 构建/配置)
+  ✅ 已迁移 (单文件):           1 个  ─ twist_key_controller.py → rclpy
+  ✅ 已删除 (遗留测试):         8 个  ─ teleop_twist_joy/test/*.test
+  ✅ 已修复 (World 文件):       16 个 ─ custom_sun 删除, model:// 路径修正
+  ✅ 已修复 (SDF 文件):         1 个  ─ gazebo_ros_control → gazebo_ros2_control
+  ✅ 已修复 (YAML 配置):        4 个  ─ robot_driver.yaml, spirit.yaml, a1.yaml (整数→浮点数组), grid_map configs (多行格式)
+  ✅ 已清理 (注释/README):      ~20处 ─ catkin/roslaunch 引用
 ```
 
-**关键影响**: `quad_spawn.launch.py` 中启动的 `gazebo_scripts/contact_state_publisher_node` 是 ROS1 节点，会导致完整仿真管线 (`quad_gazebo.launch.py`) 在 ROS2 环境下失败。
-`grid_map_pcl_loader_node` 同样无法运行，影响 `mapping.launch.py` 中的 grid 模式地形建图。
+**编译结果: 全部 13 包编译通过, 0 错误。**
+
+(原始的关键影响已消除: `gazebo_scripts` 完全迁移, `grid_map_pcl` 由系统包替代)
+
 
 ---
 
@@ -172,6 +177,13 @@
 | `gazebo_scripts/COLCON_IGNORE` | 已删除, 包可正常编译 | ✅ 已处理 |
 | `external/teleop_twist_joy/test/*.test` (8个) | ROS1 XML测试文件已删除 | ✅ 已清理 |
 | `quad_msgs/CMakeLists.txt` | 清理 catkin 注释块 | ✅ 已清理 |
+| `spirit_description/sdf_mesh/spirit.sdf` | gazebo_ros_control → gazebo_ros2_control, model:/// → model:// | ✅ 已修复 |
+| `gazebo_scripts/worlds/**/*.world` (16个) | custom_sun 引用删除, model:/// → model:// | ✅ 已修复 |
+| `robot_driver/robot_driver.yaml` | 补充缺失的 16 个参数 (sit/stand/stance/swing/safety kp/kd 等) | ✅ 已修复 |
+| `quad_utils/config/spirit.yaml`, `a1.yaml` | 整数数组 → 浮点数组 (sit_kp 等) | ✅ 已修复 |
+| `quad_utils/config/grid_map_visualization.yaml` | 单行 → 多行 YAML, 修复序列类型解析 | ✅ 已修复 |
+| `quad_utils/config/filter_chain.yaml` | 单行 → 多行 YAML, 修复序列类型解析 | ✅ 已修复 |
+| `contact_state_publisher.cpp` (二次修复) | loadROSParam(shared_from_this) → declare_parameter + get_parameter | ✅ 已修复 |
 | `quad_utils/CMakeLists.txt` | 清理 catkin 注释块和重复代码 | ✅ 已清理 |
 | `quad_utils/package.xml` | 清理 ROS1 注释文档块 | ✅ 已清理 |
 | `global_body_planner/README.md` | catkin → colcon, roslaunch → ros2 launch | ✅ 已修复 |
@@ -186,7 +198,7 @@
 
 ### 📊 迁移统计
 
-- 迁移文件数: **12 个源文件** + **5 个构建/配置文件**
+- 迁移文件数: **12 个源文件** + **5 个构建/配置文件** + **1 个 SDF** + **16 个 world 文件** + **4 个 YAML**
 - 删除文件: **8 个** (.test 文件)
-- 编译结果: ✅ **gazebo_scripts 包编译通过**
+- 编译结果: ✅ **全量 13 包编译通过**
 - 剩余 ROS1 残留: 仅 `external/grid_map_pcl/` (有 COLCON_IGNORE, 系统包替代)

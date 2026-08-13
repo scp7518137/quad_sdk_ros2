@@ -36,7 +36,7 @@ def global_param_files():
         share_path("quad_utils", "config", "teleop_twist_keyboard.yaml"),
         share_path("quad_utils", "config", "rviz_interface.yaml"),
         share_path("quad_utils", "config", "trajectory_publisher.yaml"),
-        share_path("quad_utils", "config", "topics_global.yaml"),
+
     ]
 
 

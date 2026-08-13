@@ -20,7 +20,7 @@
 
 | Launch 文件 | 启动的节点 | 启动的软件 | 功能描述 |
 |-------------|-----------|-----------|----------|
-| **quad_spawn.launch.py** | `gazebo_ros/spawn_entity.py` (spawn SDF 模型), `controller_manager/spawner` (ros2_control joint_controller + joint_state_controller), `gazebo_scripts/contact_state_publisher_node` ⚠️ROS1; 包含: robot_driver.launch | — | 仿真生成入口：在 Gazebo 中生成机器人 SDF 模型，启动 ros2_control 关节控制器，启动接触状态发布和机器人驱动。⚠️ contact_state_publisher_node 是 ROS1 节点，在 ROS2 下无法运行。 |
+| **quad_spawn.launch.py** | `gazebo_ros/spawn_entity.py` (spawn SDF 模型), `controller_manager/spawner` (ros2_control joint_controller + joint_state_controller), `gazebo_scripts/contact_state_publisher_node`; 包含: robot_driver.launch | — | 仿真生成入口：在 Gazebo 中生成机器人 SDF 模型，启动 ros2_control 关节控制器，启动接触状态发布和机器人驱动。 |
 | **quad_visualization.launch.py** | `rviz2/rviz2`, `plotjuggler/plotjuggler` (条件), `rqt_gui/rqt_gui` (条件); 包含: visualization_plugins.launch (per-robot) | **RViz2**, **PlotJuggler**, **RQT** | 可视化总入口：启动 RViz2 3D 可视化、PlotJuggler 时序绘图、RQT 面板、每个机器人的 robot_state_publisher 和 rviz_interface。配置文件: quad_viewer.rviz, plotjuggler_config.xml, dashboard.perspective。 |
 | **planning.launch.py** | `global_body_planner_node` (条件: reference=='gbpl'), `teleop_twist_keyboard` (条件, xterm 终端中), `local_planner_node`, `trajectory_publisher_node`; 包含: teleop.launch (条件), logging.launch (条件) | — | 规划管线：全局躯干规划器 → 局部规划器 → 轨迹发布器。支持键盘/手柄遥操作输入。参数: leaping, use_twist_input, adaptive_complexity, goal_state。重映射: start_state→state/ground_truth, goal_state→clicked_point。 |
 | **mapping.launch.py** | `terrain_map_publisher_node` (条件: input_type=='grid'), `mesh_to_grid_map_node` (条件: input_type=='mesh'), `grid_map_visualization` (grid_map_visualization/grid_map_visualization), `filters_demo` (grid_map_demos/filters_demo) | — | 地形建图管线：支持 grid (PCD) 和 mesh (STL/OBJ) 两种输入类型，发布 grid_map 地形数据并可视化。配置: grid_map_visualization.yaml, filter_chain.yaml。 |
@@ -45,7 +45,7 @@
 | Launch 文件 | 启动的节点 | 启动的软件 | 功能描述 |
 |-------------|-----------|-----------|----------|
 | **a1_rviz.launch.py** (a1_description) | `joint_state_publisher_gui`, `robot_state_publisher`, `rviz2/rviz2` | **RViz2** | A1 机器人模型预览：加载 A1 URDF/xacro、启动 joint_state_publisher_gui (可拖拽关节)、robot_state_publisher (发布 TF)、RViz2 显示。配置: check_joint.rviz, publish_frequency=1000。 |
-| **grid_map_pcl_loader_node.launch.py** (grid_map_pcl) | `grid_map_pcl_loader_node` ⚠️ROS1 | — | PCD 加载：从 PCD 点云文件生成 grid_map。配置: config/parameters.yaml。⚠️ 该节点本身是 ROS1 实现。 |
+| **grid_map_pcl_loader_node.launch.py** (grid_map_pcl) | `grid_map_pcl_loader_node` | — | PCD 加载：从 PCD 点云文件生成 grid_map。配置: config/parameters.yaml。使用 ROS2 系统包。 |
 | **mocap.launch.py** (mocap_optitrack) | `mocap_node` | — | OptiTrack 动捕独立启动 (与 quad_utils/mocap.launch.py 功能相同)。`on_exit=Shutdown()`。 |
 | **teleop.launch.py** (teleop_twist_joy) | `joy/joy_node`, `teleop_twist_joy/teleop_node` | — | 手柄遥操作：启动 Linux joystick 驱动节点和 teleop_twist_joy 转换节点。配置: config/<joy_config>.config.yaml (默认 ps3)。参数: dev=/dev/input/js0, deadzone=0.3。 |
 | **example.launch.py** (global_body_planner) | `terrain_map_publisher_node`, `grid_map_demos/image_publisher.py`, `global_body_planner_node`, `grid_map_visualization`, `rviz_interface_node`, `rviz2/rviz2` | **RViz2** | 全局规划器示例：从 PNG 图像生成地形图，运行全局躯干规划器，RViz2 可视化。配置: example_with_planner_config.terrain.rviz, data/slope.png。参数: global_params('spirit')。 |
@@ -65,7 +65,7 @@ quad_gazebo.launch.py          ← 仿真总入口
 ├── quad_spawn.launch.py       ← per-robot
 │   ├── spawn_entity.py (spawn SDF)
 │   ├── ros2_control spawner
-│   ├── contact_state_publisher_node ⚠️
+|   ├── contact_state_publisher_node
 │   └── robot_driver.launch.py
 │       ├── robot_driver_node
 │       ├── mocap.launch.py → mocap_node

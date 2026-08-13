@@ -23,6 +23,13 @@ def launch_setup(context, *args, **kwargs):
     global_params = param_utils.global_params("spirit")
 
     actions = [
+        # TF: define map as world origin
+        Node(
+            package="tf2_ros",
+            executable="static_transform_publisher",
+            name="map_tf",
+            arguments=["0", "0", "0", "0", "0", "0", "map", "world"],
+        ),
         # Generate simple terrain
         Node(
             package="quad_utils",

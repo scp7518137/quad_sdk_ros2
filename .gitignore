@@ -8,3 +8,5 @@ external/ipopt/*
 install/
 log/
 **/rbdl_build/
+quad-sdk.wiki/
+临时文件/
